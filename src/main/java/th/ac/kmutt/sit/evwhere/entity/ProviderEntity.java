@@ -11,12 +11,13 @@ import java.sql.Timestamp;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Container(containerName = "connector_type")
-public class ConnectorType {
+@Container(containerName = "provider")
+public class ProviderEntity {
     @Id
-    private Integer connectorId;
-    private String name;
-    private String type;
+    private Integer providerId;
+    private String providerName;
+    private String phone;
+    private String email;
     private Timestamp createdDate;
     private Timestamp updatedDate;
 }

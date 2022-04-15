@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Container(containerName = "station")
-public class Station {
+public class StationEntity {
     @Id
     private Integer stationId;
     private String locationName;

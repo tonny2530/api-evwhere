@@ -5,16 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.util.Assert;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import th.ac.kmutt.sit.evwhere.entity.Provider;
 import th.ac.kmutt.sit.evwhere.repository.ProviderRepository;
-
-import java.sql.Timestamp;
-import java.util.Optional;
 
 
 @SpringBootApplication

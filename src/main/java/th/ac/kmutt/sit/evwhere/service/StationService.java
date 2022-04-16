@@ -21,8 +21,7 @@ public class StationService {
         Flux<StationEntity> stationEntityFlux = stationRepository.findAll();
         List<StationResponse> stationResponses = new ArrayList<>();
         for(StationEntity s : stationEntityFlux.collectList().block()){
-            StationResponse st = new StationResponse();
-            st.setLocationName(s.getLocationName());
+            StationResponse st = mapToModel(s);
             stationResponses.add(st);
         }
         return stationResponses;
@@ -32,10 +31,24 @@ public class StationService {
         List<StationResponse> stationResponses = new ArrayList<>();
         Flux<StationEntity> stationEntityFlux = stationRepository.getStationByRadius(lat,lng);
         for(StationEntity s : stationEntityFlux.collectList().block()){
-            StationResponse st = new StationResponse();
-            st.setLocationName(s.getLocationName());
+            StationResponse st = mapToModel(s);
             stationResponses.add(st);
         }
         return stationResponses;
+    }
+    
+    private StationResponse mapToModel(StationEntity e){
+        StationResponse st = new StationResponse();
+        st.setLocationName(e.getLocationName());
+        st.setClosingTime(e.getClosingTime());
+        st.setLatitude(e.getLatitude().toString());
+        st.setLocationAddress(e.getLocationAddress());
+        st.setLocationDistrict(e.getLocationDistrict());
+        st.setLocationSubdistrict(e.getLocationSubdistrict());
+        st.setLocationProvince(e.getLocationProvince());
+        st.setLocationPostalcode(e.getLocationPostalcode());
+        st.setLongitude(e.getLongitude().toString());
+        st.setOpeningTime(e.getOpeningTime());
+        return st;
     }
 }

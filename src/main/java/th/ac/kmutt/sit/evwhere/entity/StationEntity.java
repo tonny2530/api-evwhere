@@ -21,11 +21,9 @@ public class StationEntity {
     private String locationDistrict;
     private String locationProvince;
     private String locationPostalcode;
-    private Timestamp openingTime;
-    private Timestamp closingTime;
-    private String latitude;
-    private String longitude;
-    private Timestamp createdDate;
-    private Timestamp updatedDate;
+    private String openingTime;
+    private String closingTime;
+    private Double latitude;
+    private Double longitude;
     
 }
